@@ -1,22 +1,18 @@
-package ru.frank.controller;
+package com.dinamsky.controller;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
-import com.vk.api.sdk.client.TransportClient;
-import com.vk.api.sdk.client.VkApiClient;
-import com.vk.api.sdk.httpclient.HttpTransportClient;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
-import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import ru.frank.messageHandler.MessageAnalyzer;
-import ru.frank.messageHandler.VkMessageParser;
+import com.dinamsky.messageHandler.MessageAnalyzer;
+import com.dinamsky.messageHandler.VkMessageParser;
 
 import java.io.BufferedReader;
 import java.io.IOException;

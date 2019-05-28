@@ -1,6 +1,6 @@
 
 import org.junit.Test;
-import ru.frank.messageHandler.VkMessageParser;
+import com.dinamsky.messageHandler.VkMessageParser;
 import static org.junit.Assert.*;
 
 

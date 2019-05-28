@@ -1,4 +1,4 @@
-package ru.frank.model;
+package com.dinamsky.model;
 
 
 public class CallbackConfirmation {

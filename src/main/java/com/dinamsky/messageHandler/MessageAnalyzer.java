@@ -1,4 +1,4 @@
-package ru.frank.messageHandler;
+package com.dinamsky.messageHandler;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -15,32 +15,32 @@ public class MessageAnalyzer {
     private static Map<String, String> botAnswersList = new HashMap<>();
 
     static{
-        botAnswersList.put("help", "Бот умеет находить для тебя крутую музыку.%0A" +
-                "%0AСписок команд:%0AПривет%0AКак дела?%0AСкинь трек");
+        botAnswersList.put("help", "Бот умеет проверять для тебя новости.%0A" +
+                "%0AСписок команд:%0AПривет%0AКак дела?%0AПроверь новость!");
         botAnswersList.put("привет", "Привет, человек!");
-        botAnswersList.put("как дела?", "ЗАМЕЧАТЕЛЬНО! Хочешь крутую песню, напиши 'скинь трек'");
+        botAnswersList.put("как дела?", "ЗАМЕЧАТЕЛЬНО! Хочешь проверить новость, напиши 'проверь новость'");
     }
 
     /**
      *   Коллекция id music videos
      */
-    private static List<String> musicVideoIdList = new ArrayList<>();
+    private static List<String> newsList = new ArrayList<>();
 
     static{
-        musicVideoIdList.add("456239092");
-        musicVideoIdList.add("456239093");
-        musicVideoIdList.add("456239094");
-        musicVideoIdList.add("456239095");
-        musicVideoIdList.add("456239096");
-        musicVideoIdList.add("456239097");
-        musicVideoIdList.add("456239098");
-        musicVideoIdList.add("456239099");
-        musicVideoIdList.add("456239100");
-        musicVideoIdList.add("456239101");
-        musicVideoIdList.add("456239102");
-        musicVideoIdList.add("456239103");
-        musicVideoIdList.add("456239104");
-        musicVideoIdList.add("456239105");
+        newsList.add("456239092");
+        newsList.add("456239093");
+        newsList.add("456239094");
+        newsList.add("456239095");
+        newsList.add("456239096");
+        newsList.add("456239097");
+        newsList.add("456239098");
+        newsList.add("456239099");
+        newsList.add("456239100");
+        newsList.add("456239101");
+        newsList.add("456239102");
+        newsList.add("456239103");
+        newsList.add("456239104");
+        newsList.add("456239105");
 
 
     }
@@ -59,8 +59,8 @@ public class MessageAnalyzer {
             }
         } else if(message.contains("привет")){
             answer = botAnswersList.get("привет");
-        } else if(message.contains("трек")){
-            answer = "Вот твой крутой трек!&attachment=video172635477_" + getRandomMusicVideo();
+        } else if(message.contains("Новость проверена")){
+            answer = "Вот информация о новости!&attachment=news172635477_" + getValidNews();
         }
         answer = answer.replace(" ", "+");
         return answer;
@@ -71,8 +71,8 @@ public class MessageAnalyzer {
      * Генерирует случайное число в пределах от 0 до размера массива (хранящего id music videos).
      * @return String;
      */
-    private String getRandomMusicVideo(){
-        int videoIndex = (int) (Math.random() * musicVideoIdList.size());
-        return musicVideoIdList.get(videoIndex);
+    private String getValidNews(){
+        int newsIndex = (int) (Math.random() * newsList.size());
+        return newsList.get(newsIndex);
     }
 }

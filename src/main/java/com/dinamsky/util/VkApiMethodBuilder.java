@@ -1,4 +1,4 @@
-package ru.frank.util;
+package com.dinamsky.util;
 
 public class VkApiMethodBuilder {
 

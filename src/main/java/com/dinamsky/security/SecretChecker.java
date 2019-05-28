@@ -1,4 +1,4 @@
-package ru.frank.security;
+package com.dinamsky.security;
 
 public class SecretChecker {
 
